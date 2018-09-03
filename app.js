@@ -33,5 +33,6 @@ const parseInput = input => {
       movements: lines[1] ? lines[1].split('') : [] // Array ['L', 'R', 'F', ...]
     }
   }
+
   return instructionSets.map(_ => parseInstructionSet(_))
 }
