@@ -3,4 +3,4 @@
 const samples = require('./samples')
 const app = require('./app')
 
-app(samples.input)
+app.start(samples.input)
