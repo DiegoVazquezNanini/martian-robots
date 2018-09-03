@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha *.spec.js",   
-    "test-u": "npm run lint && ./node_modules/.bin/mocha *.spec.js",
+    "test": "./node_modules/.bin/mocha *.spec.js",
     "lint": "./node_modules/.bin/standard",
     "lint-fix": "./node_modules/.bin/standard --fix"
   },

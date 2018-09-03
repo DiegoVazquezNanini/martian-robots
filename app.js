@@ -1,6 +1,5 @@
 'use strict'
 
-const samples = require('./samples')
 const robot = require('./robot')
 
 exports.start = input => {
@@ -14,7 +13,7 @@ exports.start = input => {
   console.log('Martian robots - output')
   console.log(generateOutput(results))
 
-  return results;
+  return results
 }
 
 const generateOutput = results => {
@@ -36,5 +35,3 @@ const parseInput = input => {
   }
   return instructionSets.map(_ => parseInstructionSet(_))
 }
-
-this.start(samples.input)
