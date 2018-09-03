@@ -9,36 +9,41 @@ describe('Try some instructions', () => {
       .to.throw('Input exceed 100 characters')
   })
 
-  it('should return the same position if an empty movements string is provided', () => {
+  it('should skip invalid inputs', () => {
+    const input = ``
+    const output = app.start(input)
+    expect(output).to.eql([])
+  })
+
+  it('should skip input instructions if no movements string is provided', () => {
     const input = `0 0 N`
-    const validation = app.start(input)[0]
-    expect(validation.position).to.eql([0, 0])
-    expect(validation.orientation).to.eql('N')
+    const output = app.start(input)
+    expect(output).to.eql([])
   })
 
   it('should return the same position if the movements string does not contain F', () => {
     const input = `0 0 N\nRLRLRLR`
-    const validation = app.start(input)[0]
-    expect(validation.position).to.eql([0, 0])
+    const output = app.start(input)[0]
+    expect(output.position).to.eql([0, 0])
   })
 
   it('should return the orientation if the movements string does not contain R or L', () => {
     const input = `0 0 N\nFFFFFF`
-    const validation = app.start(input)[0]
-    expect(validation.position).to.eql([0, 6])
-    expect(validation.orientation).to.eql('N')
+    const output = app.start(input)[0]
+    expect(output.position).to.eql([0, 6])
+    expect(output.orientation).to.eql('N')
   })
 
   it('should return the correct position for this sequence of movements - 1', () => {
     const input = `0 0 N\nRF`
-    const validation = app.start(input)[0]
-    expect(validation.position).to.eql([1, 0])
-    expect(validation.orientation).to.eql('E')
+    const output = app.start(input)[0]
+    expect(output.position).to.eql([1, 0])
+    expect(output.orientation).to.eql('E')
   })
 
   it('should return the correct position for this sequence of movements - 2', () => {
     const input = `0 0 N\nRFLF`
-    const validation = app.start(input)[0]
-    expect(validation.position).to.eql([1, 1])
+    const output = app.start(input)[0]
+    expect(output.position).to.eql([1, 1])
   })
 })
