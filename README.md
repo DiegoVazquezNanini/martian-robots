@@ -1,4 +1,7 @@
 # martian-robots
-npm run start  # To run the program
 
-npm run test  # To run the tests.
+## To run the program
+ `npm run start`
+
+## To run the tests.
+`npm run test`
