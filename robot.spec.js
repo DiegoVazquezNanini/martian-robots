@@ -3,7 +3,7 @@
 const robot = require('./robot')
 const expect = require('chai').expect
 
-describe.only('Robot run', () => {
+describe('Robot run', () => {
   it('Test the execution of a single instruction object', () => {
     const instructionObj = {
       position: [0, 0],
